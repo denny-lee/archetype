@@ -1,0 +1,20 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<html>
+<head>
+    <title>Spring & Velocity</title>
+</head>
+<body>
+<div>
+    ${symbol_pound}parse("/WEB-INF/velocity/layout/header.vm")
+</div>
+<div>
+    <!-- View index.vm is inserted here -->
+    ${symbol_dollar}screen_content
+</div>
+<div>
+    ${symbol_pound}parse("/WEB-INF/velocity/layout/footer.vm")
+</div>
+</body>
+</html>
