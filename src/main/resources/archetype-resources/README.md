@@ -1,15 +1,8 @@
-# my-spring-web   
-## frameworks
-- spring
+# new web project
+
+## framework
 - springmvc
+- spring
 - hibernate
-
-## db
-- mysql
-
-## view template engine
 - velocity
-
-## Todo list
-- mock and test
-- AOP
+- mysql
