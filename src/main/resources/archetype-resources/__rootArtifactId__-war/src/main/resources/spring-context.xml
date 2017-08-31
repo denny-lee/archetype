@@ -22,10 +22,10 @@
     <!--<import resource="spring-context-disconf.xml" />-->
 
     <!--<context:annotation-config />-->
-    <context:component-scan base-package="com.lee" />
+    <context:component-scan base-package="${groupId}" />
     <!-- 使用Annotation自动注册Bean,只扫描@Controller -->
     <!-- base-package 如果多个，用“,”分隔 -->
-    <!--<context:component-scan base-package="com.lee" use-default-filters="false">
+    <!--<context:component-scan base-package="${groupId}" use-default-filters="false">
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>-->
 
@@ -38,7 +38,7 @@
 
     <bean id="mySessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
         <property name="dataSource" ref="myDataSource"/>
-        <property name="packagesToScan" value="com.lee.entity"/>
+        <property name="packagesToScan" value="${groupId}.entity"/>
         <!--<property name="mappingResources">
             <list>
                 <value>product.hbm.xml</value>
@@ -159,15 +159,15 @@
         <!--<property name="viewClass" value="org.springframework.web.servlet.view.velocity.VelocityLayoutView"/>-->
     </bean>
 
-    <bean id="timeAspect" class="com.lee.aspect.TimerAspect"/>
+    <!-- <bean id="timeAspect" class="${groupId}.aspect.TimerAspect"/>
     <aop:config>
         <aop:aspect ref="timeAspect">
             <aop:pointcut id="theExecutionOfSomeFooServiceMethod"
-                          expression="execution(* com.lee.controller.*.*(..))"/>
+                          expression="execution(* ${groupId}.controller.*.*(..))"/>
             <aop:around pointcut-ref="theExecutionOfSomeFooServiceMethod"
                         method="logTimeCost"/>
         </aop:aspect>
-    </aop:config>
+    </aop:config> -->
     <!-- 拦截器配置 -->
     <!--<mvc:interceptors>
         <mvc:interceptor>

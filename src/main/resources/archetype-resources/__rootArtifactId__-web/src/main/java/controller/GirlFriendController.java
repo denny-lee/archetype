@@ -35,7 +35,11 @@ public class GirlFriendController {
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public void serveGirl(GirlFriend girlFriend, HttpServletResponse response) throws Exception {
 //        System.out.println(girlFriend.getName());
-        girlService.serve(girlFriend);
+        try {
+            girlService.serve(girlFriend);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json; charset=utf-8");
         PrintWriter pw = response.getWriter();

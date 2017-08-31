@@ -17,13 +17,10 @@ public class GirlServiceImpl implements GirlService {
     @Autowired
     private GirlDao girlDao;
     @Override
-    public GirlFriend serve(GirlFriend gf) {
+    public GirlFriend serve(GirlFriend gf) throws Exception {
 
-        try {
-            girlDao.save(gf);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        girlDao.save(gf);
+
         return gf;
     }
 }

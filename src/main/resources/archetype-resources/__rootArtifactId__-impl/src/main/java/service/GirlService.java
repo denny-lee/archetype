@@ -6,5 +6,5 @@ package ${package}.service;
 import ${package}.entity.GirlFriend;
 
 public interface GirlService {
-    GirlFriend serve(GirlFriend girlFriend);
+    GirlFriend serve(GirlFriend girlFriend) throws Exception;
 }
